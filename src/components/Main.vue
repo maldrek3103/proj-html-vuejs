@@ -11,6 +11,7 @@
       </div>
     </section>
     <section id="populars">
+      <h4>POPULAR POSTS</h4>
       <ul v-for="(post, index) in popularPosts" :key="index">
         <li>
           <img :src="post.img" :alt="post.title" />
@@ -19,7 +20,16 @@
         </li>
       </ul>
     </section>
-    <section id="recents"></section>
+    <section id="recents">
+      <h4>RECENT POSTS</h4>
+      <ul v-for="(post, index) in recentPosts" :key="index">
+        <li>
+          <img :src="post.img" :alt="post.title" />
+          <h5>{{ post.title }}</h5>
+          <p>{{ post.date }}</p>
+        </li>
+      </ul>
+    </section>
     <section id="featured"></section>
     <section id="featured-author"></section>
   </div>
@@ -86,6 +96,33 @@ export default {
         {
           img: require("../assets/images/blog-59.jpg"),
           title: "5 Lovely Walks in New York",
+          date: "January 12, 2019",
+        },
+      ],
+      recentPosts: [
+        {
+          img: require("../assets/images/blog-65.jpg"),
+          title: "Main Reasons To Stop Texting And Driving",
+          date: "January 12, 2019",
+        },
+        {
+          img: require("../assets/images/blog-66 (1).jpg"),
+          title: "Tips to Help You Quickly Prepare your Lunch",
+          date: "January 12, 2019",
+        },
+        {
+          img: require("../assets/images/blog-67.jpg"),
+          title: "Why should i buy a smartwatch?",
+          date: "January 12, 2019",
+        },
+        {
+          img: require("../assets/images/blog-68.jpg"),
+          title: "The best augmented reality smartglasses",
+          date: "January 12, 2019",
+        },
+        {
+          img: require("../assets/images/blog-69.jpg"),
+          title: "12 Healthiest Foods to Eat for Breakfast",
           date: "January 12, 2019",
         },
       ],
