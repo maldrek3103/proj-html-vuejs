@@ -67,9 +67,41 @@
           </li>
         </ul>
       </nav>
-      <div>
-        <img src="" alt="" />
+      <div id="card-post" v-for="(post, index) in mainPosts" :key="index">
+        <img :src="post.img" alt="" />
+        <span id="publish-date">
+          <h5>{{ post.date.day }}</h5>
+          <h6>{{ post.date.month }}</h6>
+        </span>
+        <h2>{{ post.title }}</h2>
+        <p>
+          {{ post.description }}
+        </p>
+        <ul>
+          <li>by {{ post.author }}</li>
+          <li>{{ post.category }}</li>
+          <li>{{ post.comments }}</li>
+        </ul>
+        <button>READ MORE</button>
       </div>
+      <!-- PAGINATION -->
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#">
+              <span>&laquo;</span>
+            </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li>
+            <a href="#">
+              <span>&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </section>
   </div>
 </template>
@@ -178,6 +210,66 @@ export default {
           img: require("../assets/images/blog-69.jpg"),
           title: "12 Healthiest Foods to Eat for Breakfast",
           date: "January 12, 2019",
+        },
+      ],
+      mainPosts: [
+        {
+          img: [require("../assets/images/blog-54.jpg")],
+          date: { day: "12", month: "JAN" },
+          title: "How To Make Friends as a Grown-Up",
+          description:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ratione nobis quas illum, ea iure, veniam sed rerum obcaecati ex nemo deleniti quam nesciunt ad fugit accusamus aliquid? Quos, blanditiis?",
+
+          author: "John Doe",
+          category: ["Lifestyle", "Travel"],
+          comments: "12 Comments",
+        },
+        {
+          img: [require("../assets/images/blog-55 (1).jpg")],
+          date: { day: "12", month: "JAN" },
+          title: "Simple Way to Have a Pretty Face",
+          description:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ratione nobis quas illum, ea iure, veniam sed rerum obcaecati ex nemo deleniti quam nesciunt ad fugit accusamus aliquid? Quos, blanditiis?",
+          author: "John Doe",
+          category: ["Photography", "Travel"],
+          comments: "12 Comments",
+        },
+        {
+          img: [require("../assets/images/blog-56 (1).jpg")],
+          date: { day: "12", month: "JAN" },
+          title: "Ranking the greatest players in basketball",
+          description:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ratione nobis quas illum, ea iure, veniam sed rerum obcaecati ex nemo deleniti quam nesciunt ad fugit accusamus aliquid? Quos, blanditiis?",
+          author: "John Doe",
+          category: ["Sport", "Business"],
+          comments: "12 Comments",
+        },
+        {
+          img: [require("../assets/images/blog-58 (1).jpg")],
+          date: { day: "12", month: "JAN" },
+          title: "Top Camper Trailer Towing Tips",
+          description:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ratione nobis quas illum, ea iure, veniam sed rerum obcaecati ex nemo deleniti quam nesciunt ad fugit accusamus aliquid? Quos, blanditiis?",
+          author: "John Doe",
+          category: ["Travel", "Lifestyle"],
+          comments: "12 Comments",
+        },
+        {
+          img: [
+            require("../assets/images/blog-13.jpg"),
+            require("../assets/images/blog-16.jpg"),
+            require("../assets/images/blog-20.jpg"),
+            require("../assets/images/blog-23.jpg"),
+            require("../assets/images/blog-29.jpg"),
+            require("../assets/images/blog-40.jpg"),
+          ],
+          date: { day: "8", month: "JAN" },
+          title: "10 Best Travel Tips After 5 Years Traveling The World",
+          description:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ratione nobis quas illum, ea iure, veniam sed rerum obcaecati ex nemo deleniti quam nesciunt ad fugit accusamus aliquid? Quos, blanditiis?",
+          author: "John Doe",
+          category: ["Travel", "Lifestyle"],
+          comments: "12 Comments",
         },
       ],
     };
