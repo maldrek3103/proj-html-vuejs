@@ -67,6 +67,7 @@
           </li>
         </ul>
       </nav>
+      <!-- CARD POST FOR MAIN PREVIEW -->
       <div id="card-post" v-for="(post, index) in mainPosts" :key="index">
         <img :src="post.img" alt="" />
         <span id="publish-date">
@@ -85,7 +86,7 @@
         <button>READ MORE</button>
       </div>
       <!-- PAGINATION -->
-      <nav>
+      <nav id="pagination">
         <ul class="pagination">
           <li>
             <a href="#">
@@ -102,6 +103,13 @@
           </li>
         </ul>
       </nav>
+    </section>
+    <!-- ASIDE SECTION FOR SOCIAL INTERACTION -->
+    <section id="socials">
+      <div><h4>LATEST FROM TWITTER</h4></div>
+      <div><h4>PHOTOS FROM INSTAGRAM</h4></div>
+      <div><h4>TAGS</h4></div>
+      <div><h4>FIND US ON FACEBOOK</h4></div>
     </section>
   </div>
 </template>
