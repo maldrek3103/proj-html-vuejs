@@ -30,8 +30,27 @@
         </li>
       </ul>
     </section>
-    <section id="featured"></section>
-    <section id="featured-author"></section>
+    <section id="featured">
+      <h4>FEATURED POSTS</h4>
+      <div>
+        <span>RECIPES</span>
+        <h4>Tips to Help You Quickly Prepare your Lunch</h4>
+        <p>bla bla bla bla bla bla bla</p>
+      </div>
+    </section>
+    <section id="featured-author">
+      <h4>FEATURED AUTHOR</h4>
+      <div>
+        <img src="../assets/images/avatar.jpg" alt="John Doe" />
+        <h4>John Doe</h4>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+          recusandae quos architecto hic beatae esse vel inventore corrupti
+          sapiente repellat a numquam corporis illo doloribus nostrum culpa sit!
+          Inventore, explicabo.
+        </p>
+      </div>
+    </section>
   </div>
 </template>
 
