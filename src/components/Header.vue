@@ -11,10 +11,19 @@
     </section>
 
     <!-- Mid header section (LOGO) -->
-    <section id="logo"></section>
+    <section id="logo">
+      <img src="" alt="" />
+    </section>
 
     <!-- Navbar and search -->
-    <section id="navbar"></section>
+    <section id="navbar">
+      <ul v-for="(link, index) in navbarLinks" :key="index">
+        <li>
+          <a :href="link.url">{{ link.text }}</a>
+        </li>
+      </ul>
+      <button>Search</button>
+    </section>
   </div>
 </template>
 
