@@ -1,58 +1,74 @@
 <template>
-  <!-- POST SECTION UNDER HEADER -->
   <div id="posts">
-    <!-- Suggested posts -->
-    <section id="highlighted">
-      <!-- Post cards -->
-      <div v-for="(post, index) in highlighted" :key="index">
-        <span>{{ post.category }}</span>
-        <h4>{{ post.title }}</h4>
-        <p>{{ post.description }}</p>
-      </div>
+    <!-- POST SECTION UNDER HEADER -->
+    <section id="quick-preview">
+      <!-- Suggested posts -->
+      <section id="highlighted">
+        <!-- Post cards -->
+        <div v-for="(post, index) in highlighted" :key="index">
+          <span>{{ post.category }}</span>
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.description }}</p>
+        </div>
+      </section>
+      <!-- Popular posts -->
+      <section id="populars">
+        <h4>POPULAR POSTS</h4>
+        <ul v-for="(post, index) in popularPosts" :key="index">
+          <li>
+            <img :src="post.img" :alt="post.title" />
+            <h5>{{ post.title }}</h5>
+            <p>{{ post.date }}</p>
+          </li>
+        </ul>
+      </section>
+      <!-- Recent posts -->
+      <section id="recents">
+        <h4>RECENT POSTS</h4>
+        <ul v-for="(post, index) in recentPosts" :key="index">
+          <li>
+            <img :src="post.img" :alt="post.title" />
+            <h5>{{ post.title }}</h5>
+            <p>{{ post.date }}</p>
+          </li>
+        </ul>
+      </section>
+      <!-- Featured posts -->
+      <section id="featured">
+        <h4>FEATURED POSTS</h4>
+        <div>
+          <span>RECIPES</span>
+          <h4>Tips to Help You Quickly Prepare your Lunch</h4>
+          <p>bla bla bla bla bla bla bla</p>
+        </div>
+      </section>
+      <!-- Featured author -->
+      <section id="featured-author">
+        <h4>FEATURED AUTHOR</h4>
+        <div>
+          <img src="../assets/images/avatar.jpg" alt="John Doe" />
+          <h4>John Doe</h4>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+            recusandae quos architecto hic beatae esse vel inventore corrupti
+            sapiente repellat a numquam corporis illo doloribus nostrum culpa
+            sit! Inventore, explicabo.
+          </p>
+        </div>
+      </section>
     </section>
-    <!-- Popular posts -->
-    <section id="populars">
-      <h4>POPULAR POSTS</h4>
-      <ul v-for="(post, index) in popularPosts" :key="index">
-        <li>
-          <img :src="post.img" :alt="post.title" />
-          <h5>{{ post.title }}</h5>
-          <p>{{ post.date }}</p>
-        </li>
-      </ul>
-    </section>
-    <!-- Recent posts -->
-    <section id="recents">
-      <h4>RECENT POSTS</h4>
-      <ul v-for="(post, index) in recentPosts" :key="index">
-        <li>
-          <img :src="post.img" :alt="post.title" />
-          <h5>{{ post.title }}</h5>
-          <p>{{ post.date }}</p>
-        </li>
-      </ul>
-    </section>
-    <!-- Featured posts -->
-    <section id="featured">
-      <h4>FEATURED POSTS</h4>
+    <!-- MAIN POST SECTION WITH FILTER BAR -->
+    <section id="main-preview">
+      <!-- FILTER BAR -->
+      <nav id="filter">
+        <ul v-for="(category, index) in categories" :key="index">
+          <li>
+            {{ category }}
+          </li>
+        </ul>
+      </nav>
       <div>
-        <span>RECIPES</span>
-        <h4>Tips to Help You Quickly Prepare your Lunch</h4>
-        <p>bla bla bla bla bla bla bla</p>
-      </div>
-    </section>
-    <!-- Featured author -->
-    <section id="featured-author">
-      <h4>FEATURED AUTHOR</h4>
-      <div>
-        <img src="../assets/images/avatar.jpg" alt="John Doe" />
-        <h4>John Doe</h4>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-          recusandae quos architecto hic beatae esse vel inventore corrupti
-          sapiente repellat a numquam corporis illo doloribus nostrum culpa sit!
-          Inventore, explicabo.
-        </p>
+        <img src="" alt="" />
       </div>
     </section>
   </div>
@@ -63,6 +79,21 @@ export default {
   name: "Main",
   data() {
     return {
+      categories: [
+        "GADGETS",
+        "PHOTOGRAPHY",
+        "LIFESTYLE",
+        "FASHION",
+        "RECIPES",
+        "TRAVEL",
+        "BUSINESS",
+        "ARCHITECTURE",
+        "REVIEWS",
+        "SPORTS",
+        "VIDEOS",
+        "TECHNOLOGY",
+        "DESIGN",
+      ],
       highlighted: [
         {
           category: "PHOTOGRAPY",
