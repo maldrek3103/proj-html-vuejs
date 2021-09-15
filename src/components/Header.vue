@@ -1,7 +1,14 @@
 <template>
   <div id="header">
     <!-- Header top links -->
-    <section id="top-header"></section>
+    <section id="top-header">
+      <h6>Everything about Lifestyle, Travel and Gadgets!</h6>
+      <ul v-for="(link, index) in topHeaderLinks" :key="index">
+        <li>
+          <a :href="link.url">{{ link.text }}</a>
+        </li>
+      </ul>
+    </section>
 
     <!-- Mid header section (LOGO) -->
     <section id="logo"></section>
@@ -34,6 +41,36 @@ export default {
         },
         {
           text: "BUY NOW",
+          url: "#",
+        },
+      ],
+      navbarLinks: [
+        {
+          text: "HOME",
+          url: "#",
+        },
+        {
+          text: "ELEMENTS",
+          url: "#",
+        },
+        {
+          text: "FEATURES",
+          url: "#",
+        },
+        {
+          text: "PAGES",
+          url: "#",
+        },
+        {
+          text: "PORTFOLIO",
+          url: "#",
+        },
+        {
+          text: "BLOG",
+          url: "#",
+        },
+        {
+          text: "SHOP",
           url: "#",
         },
       ],
