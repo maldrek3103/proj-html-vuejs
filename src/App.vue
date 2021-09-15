@@ -1,15 +1,21 @@
 <template>
-  <header>
+  <div>
     <Header />
-  </header>
+
+    <Main />
+  </div>
 </template>
 
 <script>
 import Header from "../src/components/Header.vue";
+import Main from "../src/components/Main.vue";
 
 export default {
   name: "App",
-  components: { Header },
+  components: {
+    Header,
+    Main,
+  },
 };
 </script>
 

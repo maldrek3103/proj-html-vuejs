@@ -22,7 +22,7 @@
           <a :href="link.url">{{ link.text }}</a>
         </li>
       </ul>
-      <button>Search</button>
+      <button>search</button>
     </section>
   </div>
 </template>
