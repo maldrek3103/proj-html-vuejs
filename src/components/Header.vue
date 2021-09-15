@@ -12,7 +12,7 @@
 
     <!-- Mid header section (LOGO) -->
     <section id="logo">
-      <img src="" alt="" />
+      <img src="../assets/images/logo-default-slim.png" alt="Logo" />
     </section>
 
     <!-- Navbar and search -->
