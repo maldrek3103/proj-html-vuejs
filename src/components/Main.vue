@@ -1,15 +1,16 @@
 <template>
   <!-- POST SECTION UNDER HEADER -->
-  <div id="highlighted-posts">
+  <div id="posts">
     <!-- Suggested posts -->
-    <section id="suggested">
+    <section id="highlighted">
       <!-- Post cards -->
-      <div v-for="(post, index) in highlightedPosts" :key="index">
-        <span>{{ post.label }}</span>
+      <div v-for="(post, index) in highlighted" :key="index">
+        <span>{{ post.category }}</span>
         <h4>{{ post.title }}</h4>
         <p>{{ post.description }}</p>
       </div>
     </section>
+    <!-- Popular posts -->
     <section id="populars">
       <h4>POPULAR POSTS</h4>
       <ul v-for="(post, index) in popularPosts" :key="index">
@@ -20,6 +21,7 @@
         </li>
       </ul>
     </section>
+    <!-- Recent posts -->
     <section id="recents">
       <h4>RECENT POSTS</h4>
       <ul v-for="(post, index) in recentPosts" :key="index">
@@ -30,6 +32,7 @@
         </li>
       </ul>
     </section>
+    <!-- Featured posts -->
     <section id="featured">
       <h4>FEATURED POSTS</h4>
       <div>
@@ -38,6 +41,7 @@
         <p>bla bla bla bla bla bla bla</p>
       </div>
     </section>
+    <!-- Featured author -->
     <section id="featured-author">
       <h4>FEATURED AUTHOR</h4>
       <div>
@@ -59,34 +63,34 @@ export default {
   name: "Main",
   data() {
     return {
-      highlightedPosts: [
+      highlighted: [
         {
-          label: "PHOTOGRAPY",
+          category: "PHOTOGRAPY",
           title: "How To Take Better Concert Pictures in 30 Seconds",
           description: "bla bla bla bla bla bla bla bla bla",
         },
         {
-          label: "GADGETS",
+          category: "GADGETS",
           title: "Gadget That Make Your Smartphone Even Smarter",
           description: "bla bla bla bla bla bla bla bla bla",
         },
         {
-          label: "TRAVEL",
+          category: "TRAVEL",
           title: "20 Top-Rated Tourist Attraction in Manhattan",
           description: "bla bla bla bla bla bla bla bla bla",
         },
         {
-          label: "LIFESTYLE",
+          category: "LIFESTYLE",
           title: "The Best Way to Ride a Motorcycle",
           description: "bla bla bla bla bla bla bla bla bla",
         },
         {
-          label: "TRAVEL",
+          category: "TRAVEL",
           title: "5 Fun Things to Do at the Beach",
           description: "bla bla bla bla bla bla bla bla bla",
         },
         {
-          label: "RECIPES",
+          category: "RECIPES",
           title: "Amazingly Fresh Fruit And Herb Drinks For Summer",
           description: "bla bla bla bla bla bla bla bla bla",
         },
