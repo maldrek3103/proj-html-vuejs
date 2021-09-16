@@ -2,27 +2,39 @@
   <div id="header">
     <!-- Header top links -->
     <section id="top-header">
-      <h6>Everything about Lifestyle, Travel and Gadgets!</h6>
-      <ul v-for="(link, index) in topHeaderLinks" :key="index">
-        <li>
-          <a :href="link.url">{{ link.text }}</a>
-        </li>
-      </ul>
+      <div class="container d-flex align-items-center py-3">
+        <h6 class="m-0">Everything about Lifestyle, Travel and Gadgets!</h6>
+
+        <ul class="d-flex m-0">
+          <li v-for="(link, index) in topHeaderLinks" :key="index" class="mx-3">
+            <a :href="link.url">{{ link.text }}</a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- Mid header section (LOGO) -->
     <section id="logo">
-      <img src="../assets/images/logo-default-slim.png" alt="Logo" />
+      <div class="container py-3">
+        <img src="../assets/images/logo-default-slim.png" alt="Logo" />
+      </div>
     </section>
+
+    <!-- Divider -->
+    <hr class="m-0" />
 
     <!-- Navbar and search -->
     <section id="navbar">
-      <ul v-for="(link, index) in navbarLinks" :key="index">
-        <li>
-          <a :href="link.url">{{ link.text }}</a>
-        </li>
-      </ul>
-      <button>search</button>
+      <div
+        class="container d-flex align-items-center justify-content-between py-3"
+      >
+        <ul class="d-flex m-0 p-0">
+          <li v-for="(link, index) in navbarLinks" :key="index" class="me-5">
+            <a :href="link.url">{{ link.text }}</a>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-light">Search</button>
+      </div>
     </section>
   </div>
 </template>
@@ -88,5 +100,27 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+#top-header {
+  background-color: #0088cc;
+  ul {
+    list-style-type: none;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+  h6 {
+    color: #fff;
+  }
+}
+#navbar {
+  ul {
+    list-style-type: none;
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
 </style>

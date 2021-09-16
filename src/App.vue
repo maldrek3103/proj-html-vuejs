@@ -1,10 +1,14 @@
 <template>
   <div>
-    <Header />
-
-    <Main />
-
-    <Footer />
+    <header>
+      <Header />
+    </header>
+    <main>
+      <Main />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
   </div>
 </template>
 
@@ -24,12 +28,5 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-div {
-  background-color: #ccc;
-}
+@import "~bootstrap/scss/bootstrap";
 </style>

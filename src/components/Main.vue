@@ -4,11 +4,20 @@
     <section id="quick-preview">
       <!-- Suggested posts -->
       <section id="highlighted">
-        <!-- Post cards -->
-        <div v-for="(post, index) in highlighted" :key="index">
-          <span>{{ post.category }}</span>
-          <h4>{{ post.title }}</h4>
-          <p>{{ post.description }}</p>
+        <div class="container">
+          <!-- Post cards -->
+          <div class="row">
+            <div
+              v-for="(post, index) in highlighted"
+              :key="index"
+              class="col-4"
+            >
+              <img :src="post.img" class="img-fluid" />
+              <span>{{ post.category }}</span>
+              <h4>{{ post.title }}</h4>
+              <p>{{ post.description }}</p>
+            </div>
+          </div>
         </div>
       </section>
       <!-- Popular posts -->
@@ -139,31 +148,37 @@ export default {
           category: "PHOTOGRAPY",
           title: "How To Take Better Concert Pictures in 30 Seconds",
           description: "bla bla bla bla bla bla bla bla bla",
+          img: require("../assets/images/blog-46.jpg"),
         },
         {
           category: "GADGETS",
           title: "Gadget That Make Your Smartphone Even Smarter",
           description: "bla bla bla bla bla bla bla bla bla",
+          img: require("../assets/images/blog-47.jpg"),
         },
         {
           category: "TRAVEL",
           title: "20 Top-Rated Tourist Attraction in Manhattan",
           description: "bla bla bla bla bla bla bla bla bla",
+          img: require("../assets/images/blog-48.jpg"),
         },
         {
           category: "LIFESTYLE",
           title: "The Best Way to Ride a Motorcycle",
           description: "bla bla bla bla bla bla bla bla bla",
+          img: require("../assets/images/blog-49.jpg"),
         },
         {
           category: "TRAVEL",
           title: "5 Fun Things to Do at the Beach",
           description: "bla bla bla bla bla bla bla bla bla",
+          img: require("../assets/images/blog-50.jpg"),
         },
         {
           category: "RECIPES",
           title: "Amazingly Fresh Fruit And Herb Drinks For Summer",
           description: "bla bla bla bla bla bla bla bla bla",
+          img: require("../assets/images/blog-51.jpg"),
         },
       ],
       popularPosts: [
