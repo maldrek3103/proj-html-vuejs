@@ -20,7 +20,7 @@
           </div>
         </div>
       </section>
-      <div class="container">
+      <div class="container py-5">
         <div class="row">
           <!-- Popular posts -->
           <section id="populars" class="col-4">
@@ -64,13 +64,14 @@
               </li>
             </ul>
           </section>
-          <div class="col-4">
+          <section id="featured" class="col-4">
             <!-- Featured posts -->
-            <section id="featured">
+            <section id="featured-posts">
               <h4>FEATURED POSTS</h4>
               <div>
-                <span>RECIPES</span>
-                <h4>Tips to Help You Quickly Prepare your Lunch</h4>
+                <img src="../assets/images/blog-66.jpg" class="img-fluid" />
+                <span class="badge badge-secondary">RECIPES</span>
+                <h3>Tips to Help You Quickly Prepare your Lunch</h3>
                 <p>bla bla bla bla bla bla bla</p>
               </div>
             </section>
@@ -78,17 +79,26 @@
             <section id="featured-author">
               <h4>FEATURED AUTHOR</h4>
               <div>
-                <img src="../assets/images/avatar.jpg" alt="John Doe" />
-                <h4>John Doe</h4>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime, recusandae quos architecto hic beatae esse vel
-                  inventore corrupti sapiente repellat a numquam corporis illo
-                  doloribus nostrum culpa sit! Inventore, explicabo.
-                </p>
+                <div class="row">
+                  <div class="col-4">
+                    <img
+                      src="../assets/images/avatar.jpg"
+                      alt="John Doe"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-8">
+                    <h6>John Doe</h6>
+                    <p>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Maxime, recusandae quos architecto hic beatae esse vel
+                      inventore corrupti sapiente repellat a numquam corporis.
+                    </p>
+                  </div>
+                </div>
               </div>
             </section>
-          </div>
+          </section>
         </div>
       </div>
     </section>
@@ -329,8 +339,20 @@ export default {
 <style lang="scss">
 #highlighted {
   background-color: #f7f7f7;
-  .badge {
-    background-color: #0088cc;
+}
+.badge {
+  background-color: #0088cc;
+}
+#populars,
+#recents,
+#featured,
+#featured-author {
+  h4 {
+    font-weight: bold;
+  }
+  p {
+    font-size: 0.8rem;
+    color: #888888;
   }
 }
 </style>
