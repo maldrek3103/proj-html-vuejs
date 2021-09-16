@@ -4,7 +4,7 @@
     <section id="quick-preview">
       <!-- Suggested posts -->
       <section id="highlighted">
-        <div class="container">
+        <div class="container py-5">
           <!-- Post cards -->
           <div class="row">
             <div
@@ -13,58 +13,84 @@
               class="col-4"
             >
               <img :src="post.img" class="img-fluid" />
-              <span>{{ post.category }}</span>
+              <span class="badge badge-secondary">{{ post.category }}</span>
               <h4>{{ post.title }}</h4>
               <p>{{ post.description }}</p>
             </div>
           </div>
         </div>
       </section>
-      <!-- Popular posts -->
-      <section id="populars">
-        <h4>POPULAR POSTS</h4>
-        <ul v-for="(post, index) in popularPosts" :key="index">
-          <li>
-            <img :src="post.img" :alt="post.title" />
-            <h5>{{ post.title }}</h5>
-            <p>{{ post.date }}</p>
-          </li>
-        </ul>
-      </section>
-      <!-- Recent posts -->
-      <section id="recents">
-        <h4>RECENT POSTS</h4>
-        <ul v-for="(post, index) in recentPosts" :key="index">
-          <li>
-            <img :src="post.img" :alt="post.title" />
-            <h5>{{ post.title }}</h5>
-            <p>{{ post.date }}</p>
-          </li>
-        </ul>
-      </section>
-      <!-- Featured posts -->
-      <section id="featured">
-        <h4>FEATURED POSTS</h4>
-        <div>
-          <span>RECIPES</span>
-          <h4>Tips to Help You Quickly Prepare your Lunch</h4>
-          <p>bla bla bla bla bla bla bla</p>
+      <div class="container">
+        <div class="row">
+          <!-- Popular posts -->
+          <section id="populars" class="col-4">
+            <h4>POPULAR POSTS</h4>
+            <ul class="list-group list-group-flush">
+              <li
+                v-for="(post, index) in popularPosts"
+                :key="index"
+                class="list-group-item py-3 ps-0"
+              >
+                <div class="row">
+                  <div class="col-2">
+                    <img :src="post.img" :alt="post.title" class="img-fluid" />
+                  </div>
+                  <div class="col-10">
+                    <h6 class="m-0">{{ post.title }}</h6>
+                    <p class="m-0">{{ post.date }}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <!-- Recent posts -->
+          <section id="recents" class="col-4">
+            <h4>RECENT POSTS</h4>
+            <ul class="list-group list-group-flush">
+              <li
+                v-for="(post, index) in recentPosts"
+                :key="index"
+                class="list-group-item py-3 ps-0"
+              >
+                <div class="row">
+                  <div class="col-2">
+                    <img :src="post.img" :alt="post.title" class="img-fluid" />
+                  </div>
+                  <div class="col-10">
+                    <h6 class="m-0">{{ post.title }}</h6>
+                    <p class="m-0">{{ post.date }}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <div class="col-4">
+            <!-- Featured posts -->
+            <section id="featured">
+              <h4>FEATURED POSTS</h4>
+              <div>
+                <span>RECIPES</span>
+                <h4>Tips to Help You Quickly Prepare your Lunch</h4>
+                <p>bla bla bla bla bla bla bla</p>
+              </div>
+            </section>
+            <!-- Featured author -->
+            <section id="featured-author">
+              <h4>FEATURED AUTHOR</h4>
+              <div>
+                <img src="../assets/images/avatar.jpg" alt="John Doe" />
+                <h4>John Doe</h4>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Maxime, recusandae quos architecto hic beatae esse vel
+                  inventore corrupti sapiente repellat a numquam corporis illo
+                  doloribus nostrum culpa sit! Inventore, explicabo.
+                </p>
+              </div>
+            </section>
+          </div>
         </div>
-      </section>
-      <!-- Featured author -->
-      <section id="featured-author">
-        <h4>FEATURED AUTHOR</h4>
-        <div>
-          <img src="../assets/images/avatar.jpg" alt="John Doe" />
-          <h4>John Doe</h4>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-            recusandae quos architecto hic beatae esse vel inventore corrupti
-            sapiente repellat a numquam corporis illo doloribus nostrum culpa
-            sit! Inventore, explicabo.
-          </p>
-        </div>
-      </section>
+      </div>
     </section>
     <!-- MAIN POST SECTION WITH FILTER BAR -->
     <section id="main-preview">
@@ -300,5 +326,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+#highlighted {
+  background-color: #f7f7f7;
+  .badge {
+    background-color: #0088cc;
+  }
+}
 </style>
