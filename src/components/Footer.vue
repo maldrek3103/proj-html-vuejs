@@ -41,7 +41,7 @@
           <!-- Categories -->
           <div class="col-3">
             <h5>CATEGORIES</h5>
-            <ul v-for="category in categories" :key="category">
+            <ul v-for="(category, index) in categories" :key="index">
               <li>
                 <span class="badge badge-secondary">{{ category }}</span>
               </li>
@@ -70,7 +70,7 @@
           <div class="col-3">
             <div id="useful-links">
               <ul class="d-flex justify-content-between">
-                <li v-for="link in usefulLinks" :key="link">
+                <li v-for="(link, index) in usefulLinks" :key="index">
                   <a :href="link.url">{{ link.text }}</a>
                 </li>
               </ul>
