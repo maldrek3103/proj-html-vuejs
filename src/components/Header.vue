@@ -102,7 +102,7 @@ export default {
 
 <style lang="scss">
 #top-header {
-  background-color: #0088cc;
+  background-color: #33b7bb;
   ul {
     list-style-type: none;
     a {

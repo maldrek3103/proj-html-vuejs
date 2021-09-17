@@ -102,59 +102,76 @@
         </div>
       </div>
     </section>
+
     <!-- MAIN POST SECTION WITH FILTER BAR -->
     <section id="main-preview">
       <!-- FILTER BAR -->
       <nav id="filter">
-        <ul v-for="(category, index) in categories" :key="index">
-          <li>
-            {{ category }}
-          </li>
-        </ul>
+        <div class="container">
+          <ul class="d-flex justify-content-between m-0 py-5">
+            <li
+              v-for="(category, index) in categories"
+              :key="index"
+              class="py-2 px-5 bg-dark overflow-hidden text-white"
+            >
+              {{ category }}
+            </li>
+          </ul>
+        </div>
       </nav>
       <!-- CARD POST FOR MAIN PREVIEW -->
-      <div id="card-post" v-for="(post, index) in mainPosts" :key="index">
-        <img :src="post.img" alt="" />
-        <span id="publish-date">
-          <h5>{{ post.date.day }}</h5>
-          <h6>{{ post.date.month }}</h6>
-        </span>
-        <h2>{{ post.title }}</h2>
-        <p>
-          {{ post.description }}
-        </p>
-        <ul>
-          <li>by {{ post.author }}</li>
-          <li>{{ post.category }}</li>
-          <li>{{ post.comments }}</li>
-        </ul>
-        <button>READ MORE</button>
+      <div class="container">
+        <div class="row">
+          <div class="col-9">
+            <div id="card-post" v-for="(post, index) in mainPosts" :key="index">
+              <img :src="post.img" alt="" class="img-fluid" />
+              <span id="publish-date">
+                <h5>{{ post.date.day }}</h5>
+                <h6>{{ post.date.month }}</h6>
+              </span>
+              <h2>{{ post.title }}</h2>
+              <p>
+                {{ post.description }}
+              </p>
+              <ul>
+                <li>by {{ post.author }}</li>
+                <li>{{ post.category }}</li>
+                <li>{{ post.comments }}</li>
+              </ul>
+              <button>READ MORE</button>
+            </div>
+            <!-- PAGINATION -->
+            <div id="pagination">
+              <nav id="pagination">
+                <ul class="pagination">
+                  <li>
+                    <a href="#">
+                      <span>&laquo;</span>
+                    </a>
+                  </li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li>
+                    <a href="#">
+                      <span>&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <!-- ASIDE SECTION FOR SOCIAL INTERACTION -->
+          <div class="col-3">
+            <section id="socials">
+              <div><h4>LATEST FROM TWITTER</h4></div>
+              <div><h4>PHOTOS FROM INSTAGRAM</h4></div>
+              <div><h4>TAGS</h4></div>
+              <div><h4>FIND US ON FACEBOOK</h4></div>
+            </section>
+          </div>
+        </div>
       </div>
-      <!-- PAGINATION -->
-      <nav id="pagination">
-        <ul class="pagination">
-          <li>
-            <a href="#">
-              <span>&laquo;</span>
-            </a>
-          </li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li>
-            <a href="#">
-              <span>&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </section>
-    <!-- ASIDE SECTION FOR SOCIAL INTERACTION -->
-    <section id="socials">
-      <div><h4>LATEST FROM TWITTER</h4></div>
-      <div><h4>PHOTOS FROM INSTAGRAM</h4></div>
-      <div><h4>TAGS</h4></div>
-      <div><h4>FIND US ON FACEBOOK</h4></div>
     </section>
   </div>
 </template>
@@ -171,13 +188,13 @@ export default {
         "FASHION",
         "RECIPES",
         "TRAVEL",
-        "BUSINESS",
-        "ARCHITECTURE",
-        "REVIEWS",
-        "SPORTS",
-        "VIDEOS",
-        "TECHNOLOGY",
-        "DESIGN",
+        // "BUSINESS",
+        // "ARCHITECTURE",
+        // "REVIEWS",
+        // "SPORTS",
+        // "VIDEOS",
+        // "TECHNOLOGY",
+        // "DESIGN",
       ],
       highlighted: [
         {
@@ -354,5 +371,8 @@ export default {
     font-size: 0.8rem;
     color: #888888;
   }
+}
+#filter {
+  background-color: #0088cc;
 }
 </style>
