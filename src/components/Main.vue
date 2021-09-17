@@ -120,29 +120,38 @@
         </div>
       </nav>
       <!-- CARD POST FOR MAIN PREVIEW -->
-      <div class="container">
+      <div class="container py-5">
         <div class="row">
           <div class="col-9">
             <div id="card-post" v-for="(post, index) in mainPosts" :key="index">
-              <img :src="post.img" alt="" class="img-fluid" />
-              <span id="publish-date">
-                <h5>{{ post.date.day }}</h5>
-                <h6>{{ post.date.month }}</h6>
-              </span>
-              <h2>{{ post.title }}</h2>
-              <p>
-                {{ post.description }}
-              </p>
-              <ul>
-                <li>by {{ post.author }}</li>
-                <li>{{ post.category }}</li>
-                <li>{{ post.comments }}</li>
-              </ul>
-              <button>READ MORE</button>
+              <div id="card-image">
+                <img :src="post.img" alt="" class="img-fluid" />
+              </div>
+              <div class="d-flex py-3">
+                <div id="publish-date">
+                  <h5>{{ post.date.day }}</h5>
+                  <h6>{{ post.date.month }}</h6>
+                </div>
+                <div id="card-text" class="ms-3">
+                  <h2>{{ post.title }}</h2>
+                  <p class="py-3">
+                    {{ post.description }}
+                  </p>
+                  <div class="d-flex justify-content-between">
+                    <ul class="d-flex">
+                      <li>by {{ post.author }}</li>
+                      <li>{{ post.category }}</li>
+                      <li>{{ post.comments }}</li>
+                    </ul>
+                    <button>READ MORE</button>
+                  </div>
+                </div>
+              </div>
+              <hr />
             </div>
             <!-- PAGINATION -->
-            <div id="pagination">
-              <nav id="pagination">
+            <div>
+              <nav>
                 <ul class="pagination">
                   <li>
                     <a href="#">
@@ -333,11 +342,11 @@ export default {
         {
           img: [
             require("../assets/images/blog-13.jpg"),
-            require("../assets/images/blog-16.jpg"),
-            require("../assets/images/blog-20.jpg"),
-            require("../assets/images/blog-23.jpg"),
-            require("../assets/images/blog-29.jpg"),
-            require("../assets/images/blog-40.jpg"),
+            // require("../assets/images/blog-16.jpg"),
+            // require("../assets/images/blog-20.jpg"),
+            // require("../assets/images/blog-23.jpg"),
+            // require("../assets/images/blog-29.jpg"),
+            // require("../assets/images/blog-40.jpg"),
           ],
           date: { day: "8", month: "JAN" },
           title: "10 Best Travel Tips After 5 Years Traveling The World",
@@ -354,11 +363,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_colors.scss";
 #highlighted {
-  background-color: #f7f7f7;
+  background-color: $bg-color-light-grey;
 }
 .badge {
-  background-color: #0088cc;
+  background-color: $bg-color-primary;
 }
 #populars,
 #recents,
@@ -369,10 +379,15 @@ export default {
   }
   p {
     font-size: 0.8rem;
-    color: #888888;
+    color: $text-color-grey-2;
   }
 }
 #filter {
-  background-color: #0088cc;
+  background-color: $bg-color-primary;
+}
+#card-text {
+  li {
+    list-style-type: none;
+  }
 }
 </style>

@@ -101,17 +101,18 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_colors.scss";
 #top-header {
-  background-color: #33b7bb;
+  background-color: $bg-color-primary;
   ul {
     list-style-type: none;
     a {
       text-decoration: none;
-      color: #fff;
+      color: $bg-color-white;
     }
   }
   h6 {
-    color: #fff;
+    color: $bg-color-white;
   }
 }
 #navbar {
@@ -119,7 +120,7 @@ export default {
     list-style-type: none;
     a {
       text-decoration: none;
-      color: #000;
+      color: $bg-color-black;
     }
   }
 }
