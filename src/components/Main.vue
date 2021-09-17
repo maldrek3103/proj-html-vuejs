@@ -8,6 +8,8 @@
           <!-- Post cards -->
           <div class="row">
             <div
+              @mouseover="mouseOver"
+              @mouseleave="mouseOver"
               v-for="(post, index) in highlighted"
               :key="index"
               class="col-4 py-2"
@@ -17,7 +19,7 @@
                 <div class="text">
                   <span class="badge badge-secondary">{{ post.category }}</span>
                   <h4>{{ post.title }}</h4>
-                  <p>{{ post.description }}</p>
+                  <p v-show="active">{{ post.description }}</p>
                 </div>
               </div>
             </div>
@@ -361,7 +363,13 @@ export default {
           comments: "12 Comments",
         },
       ],
+      active: false,
     };
+  },
+  methods: {
+    mouseOver: function () {
+      this.active = !this.active;
+    },
   },
 };
 </script>
