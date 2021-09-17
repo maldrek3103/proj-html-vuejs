@@ -5,7 +5,7 @@
         <div class="row">
           <span>Get in Touch</span>
           <!-- About the blog -->
-          <div class="col-3">
+          <div id="about" class="col-3">
             <h5>ABOUT THE BLOG</h5>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
@@ -13,23 +13,30 @@
               exercitationem corporis ipsam, assumenda modi quia? Voluptas ipsa
               nesciunt magni voluptatum minima saepe.
             </p>
+            <a href="#">View more <i class="fas fa-chevron-right"></i></a>
           </div>
           <!-- Recent posts -->
-          <div class="col-3">
+          <div id="posts" class="col-3">
             <h5>RECENT POSTS</h5>
-            <ul v-for="(post, index) in recentPostsFooter" :key="index">
-              <li>
+            <ul>
+              <li
+                v-for="(post, index) in recentPostsFooter"
+                :key="index"
+                class="d-flex"
+              >
                 <img :src="post.img" alt="Our office" />
-                <h6>{{ post.text }}</h6>
-                <p>{{ post.date }}</p>
+                <div>
+                  <h6>{{ post.text }}</h6>
+                  <p>{{ post.date }}</p>
+                </div>
               </li>
             </ul>
           </div>
           <!-- Recent comments -->
-          <div class="col-3">
+          <div id="comments" class="col-3">
             <h5>RECENT COMMENTS</h5>
-            <ul v-for="(comment, index) in recentCommentsFooter" :key="index">
-              <li>
+            <ul>
+              <li v-for="(comment, index) in recentCommentsFooter" :key="index">
                 <h6>
                   {{ comment.author }} commented on
                   <a href="#">{{ comment.text }}</a>
@@ -39,10 +46,10 @@
             </ul>
           </div>
           <!-- Categories -->
-          <div class="col-3">
+          <div id="categories" class="col-3">
             <h5>CATEGORIES</h5>
-            <ul v-for="(category, index) in categories" :key="index">
-              <li>
+            <ul>
+              <li v-for="(category, index) in categories" :key="index">
                 <span class="badge badge-secondary">{{ category }}</span>
               </li>
             </ul>
@@ -152,10 +159,20 @@ export default {
 }
 #top-footer {
   background-color: $bg-color-black-gray;
-  li {
-    list-style-type: none;
-    .badge {
-      background-color: $bg-color-black;
+
+  #posts {
+    img {
+      border-radius: 50%;
+    }
+  }
+  ul {
+    padding-left: 0;
+
+    li {
+      list-style-type: none;
+      .badge {
+        background-color: $bg-color-black;
+      }
     }
   }
 }

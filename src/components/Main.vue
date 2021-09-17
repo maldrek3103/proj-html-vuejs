@@ -150,10 +150,14 @@
                     {{ post.description }}
                   </p>
                   <div class="d-flex justify-content-between">
-                    <ul class="d-flex">
-                      <li>by {{ post.author }}</li>
-                      <li>{{ post.category }}</li>
-                      <li>{{ post.comments }}</li>
+                    <ul class="d-flex p-0">
+                      <li><i class="fas fa-user"></i> by {{ post.author }}</li>
+                      <li class="px-3">
+                        <i class="far fa-folder"></i> {{ post.category }}
+                      </li>
+                      <li>
+                        <i class="far fa-comments"></i> {{ post.comments }}
+                      </li>
                     </ul>
                     <button>READ MORE</button>
                   </div>
