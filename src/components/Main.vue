@@ -10,12 +10,16 @@
             <div
               v-for="(post, index) in highlighted"
               :key="index"
-              class="col-4"
+              class="col-4 py-2"
             >
-              <img :src="post.img" class="img-fluid" />
-              <span class="badge badge-secondary">{{ post.category }}</span>
-              <h4>{{ post.title }}</h4>
-              <p>{{ post.description }}</p>
+              <div class="image">
+                <img :src="post.img" class="img-fluid" />
+                <div class="text">
+                  <span class="badge badge-secondary">{{ post.category }}</span>
+                  <h4>{{ post.title }}</h4>
+                  <p>{{ post.description }}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -366,6 +370,18 @@ export default {
 @import "@/assets/scss/_colors.scss";
 #highlighted {
   background-color: $bg-color-light-grey;
+  .image {
+    position: relative;
+    img {
+      filter: brightness(50%);
+    }
+    .text {
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+      color: $text-color-white;
+    }
+  }
 }
 .badge {
   background-color: $bg-color-primary;
