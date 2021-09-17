@@ -40,8 +40,8 @@
             v-model="searchText"
             class="me-3"
           />
-          <button type="button" class="btn btn-light" @click="showSearchbar">
-            Search
+          <button type="button" @click="showSearchbar">
+            <i class="fas fa-search"></i>
           </button>
         </div>
       </div>
@@ -135,10 +135,20 @@ export default {
 #navbar {
   ul {
     list-style-type: none;
+    li:hover {
+      a {
+        color: $text-color-primary;
+      }
+    }
     a {
       text-decoration: none;
       color: $bg-color-black;
+      font-weight: bold;
     }
+  }
+  button {
+    background-color: $bg-color-white;
+    border: 0px;
   }
 }
 </style>

@@ -8,13 +8,15 @@
           <!-- Post cards -->
           <div class="row">
             <div
-              @mouseover="mouseOver"
-              @mouseleave="mouseOver"
               v-for="(post, index) in highlighted"
               :key="index"
-              class="col-4 py-2"
+              class="col-4 p-0"
             >
-              <div class="image">
+              <div
+                class="image m-3"
+                @mouseover="mouseOver"
+                @mouseleave="mouseOver"
+              >
                 <img :src="post.img" class="img-fluid" />
                 <div class="text">
                   <span class="badge badge-secondary">{{ post.category }}</span>
