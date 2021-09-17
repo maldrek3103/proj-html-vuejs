@@ -116,15 +116,19 @@
       <!-- FILTER BAR -->
       <nav id="filter">
         <div class="container">
-          <ul class="d-flex justify-content-between m-0 py-5">
-            <li
-              v-for="(category, index) in categories"
-              :key="index"
-              class="py-2 px-5 bg-dark overflow-hidden text-white"
-            >
-              {{ category }}
-            </li>
-          </ul>
+          <div class="d-flex justify-content-between align-items-center">
+            <i class="fas fa-chevron-left"></i>
+            <ul class="d-flex justify-content-between m-0 py-5">
+              <li
+                v-for="(category, index) in categories"
+                :key="index"
+                class="py-2 px-5 bg-dark overflow-hidden text-white"
+              >
+                {{ category }}
+              </li>
+            </ul>
+            <i class="fas fa-chevron-right"></i>
+          </div>
         </div>
       </nav>
       <!-- CARD POST FOR MAIN PREVIEW -->
@@ -414,6 +418,14 @@ export default {
 #card-text {
   li {
     list-style-type: none;
+  }
+}
+#card-post {
+  button {
+    background-color: $bg-color-white;
+    border: 1px solid $border-color-gray-6;
+    border-radius: 10px;
+    padding: 0 1rem;
   }
 }
 </style>
