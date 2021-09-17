@@ -151,18 +151,18 @@
             </div>
             <!-- PAGINATION -->
             <div>
-              <nav>
+              <nav class="d-flex justify-content-end">
                 <ul class="pagination">
-                  <li>
-                    <a href="#">
+                  <li class="page-item">
+                    <a href="#" class="page-link">
                       <span>&laquo;</span>
                     </a>
                   </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li>
-                    <a href="#">
+                  <li class="page-item"><a href="#" class="page-link">1</a></li>
+                  <li class="page-item"><a href="#" class="page-link">2</a></li>
+                  <li class="page-item"><a href="#" class="page-link">3</a></li>
+                  <li class="page-item">
+                    <a href="#" class="page-link">
                       <span>&raquo;</span>
                     </a>
                   </li>

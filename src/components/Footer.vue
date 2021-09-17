@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <section id="top-footer">
+    <section id="top-footer" class="py-5">
       <div class="container">
         <div class="row">
           <span>Get in Touch</span>
@@ -42,13 +42,15 @@
           <div class="col-3">
             <h5>CATEGORIES</h5>
             <ul v-for="category in categories" :key="category">
-              <li>{{ category }}</li>
+              <li>
+                <span class="badge badge-secondary">{{ category }}</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <section id="bottom-footer">
+    <section id="bottom-footer" class="py-5">
       <!-- LOGO + Copyright -->
       <div class="container">
         <div class="row justify-content-between align-items-center">
@@ -145,16 +147,22 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/_colors.scss";
-* {
+#footer {
   color: $text-color-white;
 }
 #top-footer {
   background-color: $bg-color-black-gray;
   li {
     list-style-type: none;
+    .badge {
+      background-color: $bg-color-black;
+    }
   }
 }
 #bottom-footer {
   background-color: $bg-color-night-gray;
+  li {
+    list-style-type: none;
+  }
 }
 </style>
