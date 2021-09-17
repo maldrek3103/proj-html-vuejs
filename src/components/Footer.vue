@@ -1,62 +1,80 @@
 <template>
   <div id="footer">
     <section id="top-footer">
-      <span>Get in Touch</span>
-      <!-- About the blog -->
-      <div>
-        <h5>ABOUT THE BLOG</h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-          consequatur nulla eveniet possimus hic nihil, aliquid earum
-          exercitationem corporis ipsam, assumenda modi quia? Voluptas ipsa
-          nesciunt magni voluptatum minima saepe.
-        </p>
-      </div>
-      <!-- Recent posts -->
-      <div>
-        <h5>RECENT POSTS</h5>
-        <ul v-for="(post, index) in recentPostsFooter" :key="index">
-          <li>
-            <img :src="post.img" alt="Our office" />
-            <h6>{{ post.text }}</h6>
-            <p>{{ post.date }}</p>
-          </li>
-        </ul>
-      </div>
-      <!-- Recent comments -->
-      <div>
-        <h5>RECENT COMMENTS</h5>
-        <ul v-for="(comment, index) in recentCommentsFooter" :key="index">
-          <li>
-            <h6>
-              {{ comment.author }} commented on
-              <a href="#">{{ comment.text }}</a>
-            </h6>
-            <p>{{ comment.date }}</p>
-          </li>
-        </ul>
-      </div>
-      <!-- Categories -->
-      <div>
-        <h5>CATEGORIES</h5>
-        <ul v-for="category in categories" :key="category">
-          <li>{{ category }}</li>
-        </ul>
+      <div class="container">
+        <div class="row">
+          <span>Get in Touch</span>
+          <!-- About the blog -->
+          <div class="col-3">
+            <h5>ABOUT THE BLOG</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
+              consequatur nulla eveniet possimus hic nihil, aliquid earum
+              exercitationem corporis ipsam, assumenda modi quia? Voluptas ipsa
+              nesciunt magni voluptatum minima saepe.
+            </p>
+          </div>
+          <!-- Recent posts -->
+          <div class="col-3">
+            <h5>RECENT POSTS</h5>
+            <ul v-for="(post, index) in recentPostsFooter" :key="index">
+              <li>
+                <img :src="post.img" alt="Our office" />
+                <h6>{{ post.text }}</h6>
+                <p>{{ post.date }}</p>
+              </li>
+            </ul>
+          </div>
+          <!-- Recent comments -->
+          <div class="col-3">
+            <h5>RECENT COMMENTS</h5>
+            <ul v-for="(comment, index) in recentCommentsFooter" :key="index">
+              <li>
+                <h6>
+                  {{ comment.author }} commented on
+                  <a href="#">{{ comment.text }}</a>
+                </h6>
+                <p>{{ comment.date }}</p>
+              </li>
+            </ul>
+          </div>
+          <!-- Categories -->
+          <div class="col-3">
+            <h5>CATEGORIES</h5>
+            <ul v-for="category in categories" :key="category">
+              <li>{{ category }}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
     <section id="bottom-footer">
       <!-- LOGO + Copyright -->
-      <div id="copyright">
-        <img src="../assets/images/logo-footer.png" alt="Logo" />
-        <h6>Copyright 2020. All Rights Reserved</h6>
-      </div>
-      <!-- Useful links -->
-      <div id="useful-links">
-        <ul v-for="link in usefulLinks" :key="link">
-          <li>
-            <a :href="link.url">{{ link.text }}</a>
-          </li>
-        </ul>
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-5">
+            <div id="copyright">
+              <div class="d-flex align-items-center flex-nowrap">
+                <img
+                  src="../assets/images/logo-footer.png"
+                  alt="Logo"
+                  class="img-fluid me-3"
+                />
+                <p>Copyright 2020. All Rights Reserved</p>
+              </div>
+            </div>
+          </div>
+          <!-- Useful links -->
+          <div class="col-3">
+            <div id="useful-links">
+              <ul class="d-flex justify-content-between">
+                <li v-for="link in usefulLinks" :key="link">
+                  <a :href="link.url">{{ link.text }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -125,5 +143,18 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "@/assets/scss/_colors.scss";
+* {
+  color: $text-color-white;
+}
+#top-footer {
+  background-color: $bg-color-black-gray;
+  li {
+    list-style-type: none;
+  }
+}
+#bottom-footer {
+  background-color: $bg-color-night-gray;
+}
 </style>
