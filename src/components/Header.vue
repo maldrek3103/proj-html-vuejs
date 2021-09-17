@@ -33,7 +33,17 @@
             <a :href="link.url">{{ link.text }}</a>
           </li>
         </ul>
-        <button type="button" class="btn btn-light">Search</button>
+        <div>
+          <input
+            type="text "
+            v-show="hidden"
+            v-model="searchText"
+            class="me-3"
+          />
+          <button type="button" class="btn btn-light" @click="showSearchbar">
+            Search
+          </button>
+        </div>
       </div>
     </section>
   </div>
@@ -95,7 +105,14 @@ export default {
           url: "#",
         },
       ],
+      hidden: false,
+      searchText: "",
     };
+  },
+  methods: {
+    showSearchbar() {
+      this.hidden = !this.hidden;
+    },
   },
 };
 </script>

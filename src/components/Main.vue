@@ -367,7 +367,7 @@ export default {
     };
   },
   methods: {
-    mouseOver: function () {
+    mouseOver() {
       this.active = !this.active;
     },
   },
